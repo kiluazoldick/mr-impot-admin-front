@@ -144,7 +144,9 @@ export function DocumentForm({
     const fetchCategories = async () => {
       try {
         const response = await adminCategoriesApi.getAll();
-        const list = Array.isArray(response) ? response : response?.data || [];
+        const list: any[] = Array.isArray(response)
+          ? response
+          : (response as any)?.data || [];
         const mainCategories = list.filter((cat: Category) => !cat.parent_id);
         const subCategories = list.filter((cat: Category) => cat.parent_id);
 
