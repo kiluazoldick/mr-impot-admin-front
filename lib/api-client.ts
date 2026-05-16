@@ -6,7 +6,7 @@ interface RequestOptions {
   isFormData?: boolean;
 }
 
-async function request<T>(
+async function request<T = any>(
   endpoint: string,
   options?: RequestInit & RequestOptions,
 ): Promise<T> {
@@ -16,7 +16,6 @@ async function request<T>(
     ...(fetchOptions.headers as Record<string, string>),
   };
 
-  // Ne pas mettre Content-Type pour FormData (le navigateur le fait avec boundary)
   if (!isFormData) {
     headers["Content-Type"] = "application/json";
   }
@@ -24,7 +23,7 @@ async function request<T>(
   const response = await fetch(`${API_BASE_URL}${endpoint}`, {
     ...fetchOptions,
     headers,
-    credentials: "include", // Envoyer les cookies de session
+    credentials: "include",
   });
 
   if (!response.ok) {
@@ -42,21 +41,21 @@ async function request<T>(
 // ============================================
 export const authApi = {
   login: (email: string, password: string) =>
-    request("/auth/login", {
+    request<any>("/auth/login", {
       method: "POST",
       body: JSON.stringify({ email, password }),
     }),
 
-  me: () => request("/auth/me"),
+  me: () => request<any>("/auth/me"),
 };
 
 // ============================================
 // ADMIN - CATÉGORIES
 // ============================================
 export const adminCategoriesApi = {
-  getAll: () => request("/admin/categories"),
+  getAll: () => request<any[]>("/admin/categories"),
 
-  getById: (id: string) => request(`/admin/categories/${id}`),
+  getById: (id: string) => request<any>(`/admin/categories/${id}`),
 
   create: (data: {
     name_fr: string;
@@ -69,19 +68,19 @@ export const adminCategoriesApi = {
     sort_order?: number;
     is_active?: boolean;
   }) =>
-    request("/admin/categories", {
+    request<any>("/admin/categories", {
       method: "POST",
       body: JSON.stringify(data),
     }),
 
   update: (id: string, data: Record<string, any>) =>
-    request(`/admin/categories/${id}`, {
+    request<any>(`/admin/categories/${id}`, {
       method: "PUT",
       body: JSON.stringify(data),
     }),
 
   delete: (id: string) =>
-    request(`/admin/categories/${id}`, { method: "DELETE" }),
+    request<any>(`/admin/categories/${id}`, { method: "DELETE" }),
 };
 
 // ============================================
@@ -90,10 +89,10 @@ export const adminCategoriesApi = {
 export const adminDocumentsApi = {
   getAll: (params?: Record<string, string>) => {
     const query = params ? "?" + new URLSearchParams(params).toString() : "";
-    return request(`/admin/documents${query}`);
+    return request<any>(`/admin/documents${query}`);
   },
 
-  getById: (id: string) => request(`/admin/documents/${id}`),
+  getById: (id: string) => request<any>(`/admin/documents/${id}`),
 
   create: async (
     data: {
@@ -103,16 +102,16 @@ export const adminDocumentsApi = {
       description_fr?: string;
       description_en?: string;
       is_published?: boolean;
+      ocr_text?: string;
+      ocr_status?: string;
     },
     file?: File,
   ) => {
     let file_path: string | null = null;
     let file_size: number | null = null;
 
-    // Upload direct vers Supabase Storage
     if (file) {
       const { supabase } = await import("@/lib/supabase");
-
       const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
       const fileName = `${Date.now()}-${safeName}`;
 
@@ -131,8 +130,7 @@ export const adminDocumentsApi = {
       file_size = file.size;
     }
 
-    // Envoyer les métadonnées au backend
-    return request("/admin/documents", {
+    return request<any>("/admin/documents", {
       method: "POST",
       body: JSON.stringify({
         ...data,
@@ -147,7 +145,7 @@ export const adminDocumentsApi = {
     const formData = new FormData();
     formData.append("data", JSON.stringify(data));
     if (file) formData.append("file", file);
-    return request(`/admin/documents/${id}`, {
+    return request<any>(`/admin/documents/${id}`, {
       method: "PUT",
       body: formData,
       isFormData: true,
@@ -155,9 +153,10 @@ export const adminDocumentsApi = {
   },
 
   delete: (id: string) =>
-    request(`/admin/documents/${id}`, { method: "DELETE" }),
+    request<any>(`/admin/documents/${id}`, { method: "DELETE" }),
 
-  download: (id: string) => request(`/admin/documents/${id}?download=true`),
+  download: (id: string) =>
+    request<any>(`/admin/documents/${id}?download=true`),
 };
 
 // ============================================
@@ -166,10 +165,10 @@ export const adminDocumentsApi = {
 export const adminVideosApi = {
   getAll: (params?: Record<string, string>) => {
     const query = params ? "?" + new URLSearchParams(params).toString() : "";
-    return request(`/admin/videos${query}`);
+    return request<any>(`/admin/videos${query}`);
   },
 
-  getById: (id: string) => request(`/admin/videos/${id}`),
+  getById: (id: string) => request<any>(`/admin/videos/${id}`),
 
   create: (
     data: {
@@ -185,7 +184,7 @@ export const adminVideosApi = {
     const formData = new FormData();
     formData.append("data", JSON.stringify(data));
     if (file) formData.append("file", file);
-    return request("/admin/videos", {
+    return request<any>("/admin/videos", {
       method: "POST",
       body: formData,
       isFormData: true,
@@ -193,58 +192,48 @@ export const adminVideosApi = {
   },
 
   update: (id: string, data: Record<string, any>, file?: File) => {
-    // Si pas de fichier, envoyer en JSON simple
     if (!file) {
-      return request(`/admin/videos/${id}`, {
+      return request<any>(`/admin/videos/${id}`, {
         method: "PUT",
         body: JSON.stringify(data),
       });
     }
-    // Si fichier, envoyer en FormData
     const formData = new FormData();
     formData.append("data", JSON.stringify(data));
     formData.append("file", file);
-    return request(`/admin/videos/${id}`, {
+    return request<any>(`/admin/videos/${id}`, {
       method: "PUT",
       body: formData,
       isFormData: true,
     });
   },
 
-  delete: (id: string) => request(`/admin/videos/${id}`, { method: "DELETE" }),
+  delete: (id: string) =>
+    request<any>(`/admin/videos/${id}`, { method: "DELETE" }),
 };
 
 // ============================================
 // PUBLIC
 // ============================================
 export const publicApi = {
-  getCategories: () => request("/public/categories"),
+  getCategories: () => request<any>("/public/categories"),
 
   getDocuments: (params?: Record<string, string>) => {
     const query = params ? "?" + new URLSearchParams(params).toString() : "";
-    return request(`/public/documents${query}`);
+    return request<any>(`/public/documents${query}`);
   },
 
-  getDocument: (id: string) => request(`/public/documents/${id}`),
+  getDocument: (id: string) => request<any>(`/public/documents/${id}`),
 
   downloadDocument: (id: string) =>
-    request(`/public/documents/${id}?download=true`),
+    request<any>(`/public/documents/${id}?download=true`),
 
   getVideos: (params?: Record<string, string>) => {
     const query = params ? "?" + new URLSearchParams(params).toString() : "";
-    return request(`/public/videos${query}`);
+    return request<any>(`/public/videos${query}`);
   },
 
-  getVideo: (id: string) => request(`/public/videos/${id}`),
-};
-
-// ============================================
-// DASHBOARD
-// ============================================
-export const dashboardApi = {
-  getStats: () => request("/admin/dashboard/stats"),
-  getRecentActivity: () => request("/admin/dashboard/recent-activity"),
-  getChartData: () => request("/admin/dashboard/chart-data"),
+  getVideo: (id: string) => request<any>(`/public/videos/${id}`),
 };
 
 // ============================================
@@ -253,11 +242,11 @@ export const dashboardApi = {
 export const adminUsersApi = {
   getAll: (params?: Record<string, string>) => {
     const query = params ? "?" + new URLSearchParams(params).toString() : "";
-    return request(`/admin/users${query}`);
+    return request<any>(`/admin/users${query}`);
   },
-  getById: (id: string) => request(`/admin/users/${id}`),
+  getById: (id: string) => request<any>(`/admin/users/${id}`),
   updateStatus: (id: string, status: string) =>
-    request(`/admin/users/${id}/status`, {
+    request<any>(`/admin/users/${id}/status`, {
       method: "PUT",
       body: JSON.stringify({ status }),
     }),
