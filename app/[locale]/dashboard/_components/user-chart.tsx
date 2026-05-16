@@ -35,7 +35,7 @@ export function UserChart() {
           page: "1",
           limit: "100",
         });
-        const docs = result?.data || [];
+        const docs = (result as any)?.data || [];
 
         // Grouper par mois pour le graphique mensuel
         const grouped: Record<string, { created: number }> = {};
