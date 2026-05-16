@@ -536,7 +536,7 @@ export function ArticleForm({
                   </Button>
                 </div>
                 <iframe
-                  src={pdfUrl}
+                  src={pdfUrl ?? undefined}
                   className="flex-1 w-full"
                   title="PDF Plein écran"
                 />
