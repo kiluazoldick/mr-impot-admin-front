@@ -16,6 +16,7 @@ import {
 import { cn } from "@/lib/utils";
 import { Link } from "@/i18n/navigation";
 import { authApi } from "@/lib/api-client";
+import { adminUsersApi } from "@/lib/api-client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -75,58 +76,25 @@ export function UserManagementPageView() {
     const fetchUsers = async () => {
       setIsLoading(true);
       try {
-        // Essayer de récupérer les utilisateurs via l'API
-        const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL || "https://mr-impot-backend.vercel.app/api"}/admin/users`,
-          {
-            credentials: "include",
-          },
+        const data = await adminUsersApi.getAll();
+        const list = Array.isArray(data) ? data : data?.data || [];
+        setUsers(
+          list.map((u: any) => ({
+            id: u.id,
+            fullName:
+              [u.first_name, u.last_name].filter(Boolean).join(" ") ||
+              u.email ||
+              "Utilisateur",
+            email: u.email || "",
+            role: u.role || "user",
+            status: u.is_active ? "active" : "suspended",
+            plan: "free",
+            joinedOn: u.created_at
+              ? new Date(u.created_at).toLocaleDateString()
+              : "-",
+            avatar: u.avatar_url || null,
+          })),
         );
-        if (response.ok) {
-          const data = await response.json();
-          const list = Array.isArray(data) ? data : data?.data || [];
-          setUsers(
-            list.map((u: any) => ({
-              id: u.id,
-              fullName:
-                [u.first_name, u.last_name].filter(Boolean).join(" ") ||
-                u.email ||
-                "Utilisateur",
-              email: u.email || "",
-              role: u.role || "user",
-              status: u.is_active ? "active" : "suspended",
-              plan: "free",
-              joinedOn: u.created_at
-                ? new Date(u.created_at).toLocaleDateString()
-                : "-",
-              avatar: u.avatar_url || null,
-            })),
-          );
-        } else {
-          // Fallback : utiliser le profil courant comme seul utilisateur
-          try {
-            const me = await authApi.me();
-            if (me?.profile) {
-              setUsers([
-                {
-                  id: me.profile.id,
-                  fullName:
-                    [me.profile.first_name, me.profile.last_name]
-                      .filter(Boolean)
-                      .join(" ") || me.profile.email,
-                  email: me.profile.email,
-                  role: me.profile.role || "admin",
-                  status: "active",
-                  plan: "free",
-                  joinedOn: me.profile.created_at
-                    ? new Date(me.profile.created_at).toLocaleDateString()
-                    : "-",
-                  avatar: null,
-                },
-              ]);
-            }
-          } catch {}
-        }
       } catch (error) {
         console.error("Erreur chargement utilisateurs:", error);
       } finally {
