@@ -76,9 +76,12 @@ export function UserManagementPageView() {
       setIsLoading(true);
       try {
         // Essayer de récupérer les utilisateurs via l'API
-        const response = await fetch("http://localhost:3000/api/admin/users", {
-          credentials: "include",
-        });
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL || "https://mr-impot-backend.vercel.app/api"}/admin/users`,
+          {
+            credentials: "include",
+          },
+        );
         if (response.ok) {
           const data = await response.json();
           const list = Array.isArray(data) ? data : data?.data || [];
