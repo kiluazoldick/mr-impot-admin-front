@@ -1,0 +1,692 @@
+{
+  "Auth": {
+    "Login": {
+      "login_title": "Bienvenue sur Super Admin",
+      "login_subtitle": "Connectez-vous pour accéder au tableau de bord Super Admin",
+      "login_email": "Adresse e-mail",
+      "login_password": "Mot de passe",
+      "remember_me": "Rester connecté",
+      "forgot_password": "Mot de passe oublié",
+      "login_button": "Se connecter",
+      "loading_msg": "Connexion en cours...",
+      "error_msg": "Identifiants invalides. Veuillez réessayer.",
+      "error_generic": "Une erreur s'est produite lors de la connexion. Veuillez réessayer plus tard.",
+      "success_msg": "Bienvenue !",
+      "validation": {
+        "invalid_email": "Veuillez saisir une adresse e-mail valide.",
+        "password_required": "Le mot de passe est requis."
+      }
+    },
+    "ForgotPassword": {
+      "forgot_password_title": "Mot de passe oublié",
+      "forgot_password_subtitle": "Entrez votre adresse e-mail enregistrée et nous vous enverrons un lien pour réinitialiser votre mot de passe",
+      "email_label": "Adresse e-mail",
+      "send_button": "Envoyer le lien de réinitialisation",
+      "back_to_login": "Se connecter",
+      "success_title": "E-mail envoyé !",
+      "success_message": "Si un compte avec cet e-mail existe, vous recevrez bientôt un lien de réinitialisation de mot de passe.",
+      "error_message": "Une erreur s'est produite lors de l'envoi du lien de réinitialisation. Veuillez réessayer plus tard.",
+      "sending_button": "Envoi en cours..."
+    },
+    "ResetPassword": {
+      "title": "Réinitialisez votre mot de passe",
+      "subtitle": "Entrez votre nouveau mot de passe ci-dessous pour regagner l'accès à votre compte",
+      "new_password_label": "Nouveau mot de passe",
+      "confirm_password_label": "Confirmer le nouveau mot de passe",
+      "submit_button": "Réinitialiser le mot de passe",
+      "resetting_button": "Réinitialisation en cours...",
+      "success_title": "Réinitialisation du mot de passe réussie !",
+      "success_message": "Votre mot de passe a été réinitialisé. Vous pouvez maintenant vous connecter avec votre nouveau mot de passe.",
+      "errors": {
+        "password_too_short": "Le mot de passe doit comporter au moins 8 caractères.",
+        "password_no_uppercase": "Le mot de passe doit contenir au moins une lettre majuscule.",
+        "password_no_number": "Le mot de passe doit contenir au moins un chiffre.",
+        "password_no_special_char": "Le mot de passe doit contenir au moins un caractère spécial.",
+        "password_no_lowercase": "Le mot de passe doit contenir au moins une lettre minuscule.",
+        "passwords_mismatch": "Les mots de passe ne correspondent pas."
+      },
+      "go_to_login": "Se connecter"
+    },
+    "side_text": "Superviser les utilisateurs, surveiller l’activité et sécuriser les données"
+  },
+  "Dashboard": {
+    "ComingSoon": {
+      "title": "Bientôt disponible",
+      "subtitle": "Cette fonctionnalité n'est pas encore disponible. Nous travaillons activement pour vous l'apporter dès que possible.",
+      "back_to_dashboard": "Retour au tableau de bord"
+    },
+    "Topbar": {
+      "search_placeholder": "Rechercher...",
+      "profile": "Profil",
+      "settings": "Paramètres",
+      "logout": "Se déconnecter",
+      "logout_success": "Déconnexion réussie !",
+      "logout_error": "Impossible de se déconnecter. Veuillez réessayer.",
+      "feature_not_implemented": "La fonctionnalité \"{feature}\" n'est pas encore disponible."
+    },
+    "Sidebar": {
+      "dashboard": "Tableau de bord",
+      "user_management": "Gestion des utilisateurs",
+      "documents": "Documents",
+      "documents_list": "Documents disponibles",
+      "categories": "Catégories disponibles",
+      "articles": "Articles disponibles",
+      "report_analytics": "Rapports et analyses",
+      "support_management": "Gestion du support",
+      "subscription_management": "Gestion des abonnements",
+      "cms": "CMS",
+      "system_settings": "Paramètres Système",
+      "version": "version 1.0.0.1",
+      "videos": "Vidéos",
+      "videos_list": "Liste des vidéos",
+      "add_video": "Ajouter une vidéo"
+    },
+    "Page": {
+      "title": "Tableau de Bord",
+      "subtitle": "Bonjour, Bienvenue dans le panneau d'administration",
+      "filter_period": "Période",
+      "statistics": "Statistiques",
+      "total_users": "Utilisateurs Totaux",
+      "documents_uploaded": "Documents Téléversés",
+      "downloads_today": "Téléchargements du Jour",
+      "searches_today": "Recherches du Jour",
+      "user_statistics": "Statistiques des Utilisateurs",
+      "weekly": "Hebdomadaire",
+      "monthly": "Mensuel",
+      "recent_activity": "Activité Récente",
+      "downloaded": "A téléchargé",
+      "searched": "A recherché",
+      "mins_ago": "minutes plus tôt",
+      "active_users": "Utilisateurs Actifs",
+      "new_users": "Nouveaux Utilisateurs",
+      "downloads": "Téléchargements",
+      "searches": "Recherches",
+      "total_documents": "Total Documents"
+    },
+    "Documents": {
+      "no_documents": "Aucun document trouvé",
+      "Add": {
+        "choose_file_btn": "Choisir un fichier",
+        "no_file_chosen": "Aucun fichier choisi",
+        "back": "Retour",
+        "title": "Information du document",
+        "subtitle": "Informations requises pour le nouveau document.",
+        "edit_title": "Modifier le document",
+        "edit_subtitle": "Mettez à jour les informations du document ci-dessous.",
+        "view_title": "Détails du document",
+        "view_subtitle": "Toutes les informations sur le document.",
+        "edit_btn": "Modifier",
+        "delete_btn": "Supprimer",
+        "delete_confirm_title": "Supprimer ce document ?",
+        "delete_confirm_message": "Cette action est irréversible. Êtes-vous sûr de vouloir supprimer définitivement ce document ?",
+        "cancel_btn": "Annuler",
+        "confirm_delete_btn": "Oui, supprimer",
+        "delete_success_message": "Document supprimé avec succès",
+        "delete_error_message": "Échec de la suppression du document",
+        "success_message": "Document publié avec succès",
+        "error_message": "Échec de publication de document",
+        "categories_load_error": "Échec du chargement des catégories",
+        "load_error_message": "Échec du chargement du document",
+        "edit_success_message": "Document mis à jour avec succès",
+        "edit_error_message": "Échec de la mise à jour du document",
+        "publish_now": "Publier maintenant",
+        "update_now": "Mettre à jour",
+        "preview": "Aperçu :",
+        "form": {
+          "title_fr": "Titre (FR)",
+          "title_fr_placeholder": "Entrez le titre du document (FR)",
+          "title_en": "Titre (EN)",
+          "title_en_placeholder": "Entrez le titre du document (EN)",
+          "category": "Select Category",
+          "category_placeholder": "Choisissez une catégorie",
+          "sub_category": "Select sub category",
+          "sub_category_placeholder": "Choisissez une sous-catégorie",
+          "description_fr": "Description (FR)",
+          "description_fr_placeholder": "Entrez la description du document (FR)",
+          "description_en": "Description (EN)",
+          "description_en_placeholder": "Entrez la description du document (EN)",
+          "format": "Format",
+          "format_placeholder": "Sélectionnez un format",
+          "upload": "Upload",
+          "upload_pdf_fr": "Televerser le PDF (FR)",
+          "upload_pdf_en": "Televerser le PDF (EN)",
+          "upload_video": "Televerser la video",
+          "category_loading": "Chargement des categories...",
+          "category_empty": "Aucune categorie disponible",
+          "sub_category_empty": "Aucune sous-categorie disponible"
+        },
+        "categories": {
+          "reports": "Rapports",
+          "guides": "Guides",
+          "tutorials": "Tutoriels"
+        },
+        "sub_categories": {
+          "annual": "Annuel",
+          "monthly": "Mensuel",
+          "weekly": "Hebdomadaire"
+        },
+        "formats": {
+          "pdf": "PDF",
+          "video": "Vidéo"
+        },
+        "validation": {
+          "title_fr_required": "Le titre (FR) est requis",
+          "title_en_required": "Le titre (EN) est requis",
+          "category_required": "Categorie requise",
+          "sub_category_required": "Sous catégorie requise",
+          "description_fr_required": "La description (FR) est requise",
+          "description_en_required": "La description (EN) est requise",
+          "file_required": "Fichier requis",
+          "video_required": "La video est requise"
+        }
+      },
+
+      "title": "Documents",
+      "description": "Voici toutes les données de documents téléchargées sur votre plateforme",
+      "add_document": "Ajouter un document",
+      "statistics": "Statistiques",
+      "list_of_all_documents": "Liste de tous les documents",
+      "search_placeholder": "rechercher ici",
+      "list_error_message": "Erreur lors du chargement des documents.",
+      "sort": "Trier",
+      "table": {
+        "title": "Titre",
+        "sub_category": "Sous-catégorie",
+        "format": "Format",
+        "category": "Catégorie",
+        "views": "Vues",
+        "uploaded_on": "Téléchargé le",
+        "action": "Action"
+      },
+      "pagination": {
+        "showing_entries": "Affichage de {start} à {end} sur {total} entrées",
+        "previous": "Précédent",
+        "next": "Suivant"
+      },
+      "stats": {
+        "total_documents": "Total de documents",
+        "uploaded_pdf": "Téléchargé en PDF",
+        "uploaded_video": "Téléchargé en vidéo",
+        "recently_added": "Récemment ajouté"
+      },
+      "filter": {
+        "category": "Catégorie",
+        "subcategory": "Sous-catégorie",
+        "date": "Date",
+        "from": "Du",
+        "to": "Au",
+        "law": "Loi",
+        "decree": "Décret",
+        "jurisprudence": "Jurisprudence",
+        "tax_law": "Droit fiscal",
+        "civil_law": "Droit civil",
+        "criminal_law": "Droit pénal",
+        "international_law": "Droit international"
+      },
+      "Categories": {
+        "title": "Catégories",
+        "description": "Gérez vos catégories de documents et leurs sous-catégories depuis un seul écran.",
+        "new_category": "Nouvelle catégorie",
+        "search_placeholder": "Rechercher une catégorie ou sous-catégorie",
+        "list_title": "Catégories disponibles",
+        "list_description": "{count, plural, =0 {Aucune catégorie} one {# catégorie} other {# catégories}}",
+        "empty_title": "Aucune catégorie trouvée",
+        "empty_description": "Essayez une autre recherche ou créez votre première catégorie.",
+        "no_subcategories": "Aucune sous-catégorie",
+        "edit": "Modifier",
+        "delete": "Supprimer",
+        "delete_confirm_title": "Supprimer la catégorie ?",
+        "delete_confirm_message": "Cette action supprimera définitivement {name} et ses sous-catégories.",
+        "delete_cancel": "Annuler",
+        "delete_confirm": "Supprimer la catégorie",
+        "toast": {
+          "creating": "Création de la catégorie...",
+          "updating": "Mise à jour de la catégorie...",
+          "create_success": "Catégorie créée avec succès",
+          "update_success": "Catégorie mise à jour avec succès",
+          "deleting": "Suppression de la catégorie...",
+          "delete_success": "Catégorie supprimée avec succès",
+          "error_generic": "Une erreur est survenue. Veuillez réessayer."
+        },
+        "form": {
+          "create_title": "Créer une catégorie",
+          "create_subtitle": "Définissez une catégorie et ajoutez toutes les sous-catégories associées.",
+          "edit_title": "Modifier la catégorie",
+          "edit_subtitle": "Mettez à jour le nom de la catégorie, les sous-catégories, ou ajoutez-en de nouvelles.",
+          "category_name_fr": "Nom de la catégorie (FR)",
+          "category_name_en": "Nom de la catégorie (EN)",
+          "category_name_fr_placeholder": "Ex: Reglementation fiscale",
+          "category_name_en_placeholder": "Ex: Tax regulations",
+          "sub_categories": "Sous-catégories",
+          "sub_category_name_fr_placeholder": "Sous-catégorie {index} (FR)",
+          "sub_category_name_en_placeholder": "Sous-catégorie {index} (EN)",
+          "add_sub_category": "Ajouter une sous-catégorie",
+          "save": "Enregistrer",
+          "create": "Créer la catégorie",
+          "cancel_edit": "Annuler",
+          "updated_at": "Mis à jour le {date}",
+          "saving": "Enregistrement..."
+        },
+        "validation": {
+          "category_name_fr_required": "Le nom de la catégorie (FR) est requis",
+          "category_name_en_required": "Le nom de la catégorie (EN) est requis",
+          "sub_category_name_fr_required": "Le nom de la sous-catégorie (FR) est requis",
+          "sub_category_name_en_required": "Le nom de la sous-catégorie (EN) est requis",
+          "at_least_one_sub_category": "Ajoutez au moins une sous-catégorie",
+          "duplicate_sub_categories": "Les sous-catégories doivent être uniques"
+        }
+      }
+    },
+    "Videos": {
+      "title": "Vidéos",
+      "description": "Gérez les vidéos de la plateforme",
+      "add_video": "Ajouter une vidéo",
+      "search_placeholder": "Rechercher une vidéo...",
+      "no_videos": "Aucune vidéo trouvée",
+      "table": {
+        "title": "Titre",
+        "category": "Catégorie",
+        "status": "Statut",
+        "uploaded_on": "Ajoutée le",
+        "action": "Action"
+      }
+    },
+    "UserManagement": {
+      "title": "Gestion des utilisateurs",
+      "description": "Gérez les comptes administrateurs et utilisateurs depuis un seul espace.",
+      "create_admin_action": "Créer un compte admin",
+      "statistics": "Statistiques",
+      "admins_panel_title": "Comptes administrateurs",
+      "admins_panel_description": "{count, plural, =0 {Aucun compte administrateur} one {# compte administrateur} other {# comptes administrateurs}}",
+      "users_panel_title": "Comptes utilisateurs",
+      "users_panel_description": "{count, plural, =0 {Aucun compte utilisateur} one {# compte utilisateur} other {# comptes utilisateurs}}",
+      "search_admin_placeholder": "Rechercher un admin par nom ou e-mail",
+      "search_user_placeholder": "Rechercher un utilisateur par nom ou e-mail",
+      "empty_admins": "Aucun compte administrateur trouvé.",
+      "load_admins_error": "Impossible de charger les comptes administrateurs.",
+      "load_users_error": "Impossible de charger les comptes utilisateurs.",
+      "empty_users": "Aucun compte utilisateur trouvé.",
+      "view_account": "Voir le compte",
+      "table": {
+        "avatar": "Avatar",
+        "admin_name": "Nom admin",
+        "user_name": "Nom utilisateur",
+        "email": "E-mail",
+        "role": "Rôle",
+        "last_login": "Dernière connexion",
+        "subscription": "Abonnement",
+        "joined_on": "Inscrit le",
+        "action": "Action",
+        "status": "Statut"
+      },
+      "roles": {
+        "admin": "Admin",
+        "super-admin": "Super Admin",
+        "super_admin": "Super Admin",
+        "support_admin": "Admin support",
+        "content_admin": "Admin contenu"
+      },
+      "plans": {
+        "premium": "Premium",
+        "standard": "Standard",
+        "free": "Gratuit"
+      },
+      "status": {
+        "active": "Actif",
+        "invited": "Invité",
+        "suspended": "Suspendu"
+      },
+      "sections": {
+        "users": "Utilisateurs",
+        "documents": "Documents",
+        "categories": "Catégories",
+        "videos": "Vidéos",
+        "administration": "Administration"
+      },
+      "stats": {
+        "total_accounts": "Total des comptes",
+        "admin_accounts": "Comptes admins",
+        "active_users": "Utilisateurs actifs",
+        "new_this_month": "Nouveaux ce mois"
+      },
+      "pagination": {
+        "showing_entries": "Affichage de {start} à {end} sur {total} entrées",
+        "previous": "Précédent",
+        "next": "Suivant"
+      },
+      "Details": {
+        "back": "Retour a la gestion des utilisateurs",
+        "not_found_title": "Compte introuvable",
+        "not_found_description": "Ce compte n'existe pas ou a ete supprime.",
+        "subtitle_admin": "Informations du compte administrateur et controles de statut.",
+        "subtitle_user": "Informations du compte utilisateur et controles de statut.",
+        "action_hint": "Cette action met a jour immediatement l'acces du compte.",
+        "summary_title": "Resume rapide",
+        "contact_title": "Coordonnees",
+        "account_info_title": "Informations du compte",
+        "admin_scope_title": "Permissions et perimetre",
+        "user_usage_title": "Apercu d'usage",
+        "action_panel_title": "Actions du compte",
+        "action_panel_subtitle": "Suspendre ou reactiver l'acces a ce compte.",
+        "status_now": "Statut actuel",
+        "activity_history_title": "Historique recent",
+        "no_history": "Aucun changement de statut enregistre pour le moment.",
+        "history_item": "Statut modifie de {from} vers {to}",
+        "field_type": "Type de compte",
+        "type_admin": "Administrateur",
+        "type_user": "Utilisateur",
+        "field_id": "Identifiant du compte",
+        "field_email": "E-mail",
+        "field_phone": "Telephone",
+        "field_country": "Pays",
+        "field_status": "Statut",
+        "field_role": "Role",
+        "field_plan": "Abonnement",
+        "field_last_login": "Derniere connexion",
+        "field_joined_on": "Inscrit le",
+        "field_created_by": "Cree par",
+        "field_created_on": "Cree le",
+        "field_last_activity": "Derniere activite",
+        "field_managed_sections": "Permissions",
+        "field_documents_downloaded": "Documents telecharges",
+        "field_reports_opened": "Rapports ouverts",
+        "suspend_btn": "Suspendre le compte",
+        "reactivate_btn": "Reactiver le compte",
+        "confirm_suspend_title": "Suspendre ce compte ?",
+        "confirm_suspend_message": "Ce compte n'aura plus acces tant que vous ne le reactiverez pas.",
+        "confirm_reactivate_title": "Reactiver ce compte ?",
+        "confirm_reactivate_message": "Ce compte recuperera immediatement l'acces a la plateforme.",
+        "confirm_action_btn": "Confirmer",
+        "cancel_action_btn": "Annuler",
+        "suspend_success": "Compte suspendu avec succes.",
+        "reactivate_success": "Compte reactive avec succes."
+      },
+      "CreateAdmin": {
+        "title": "Creer un compte administrateur",
+        "subtitle": "Definissez le role, le perimetre d'acces et le mode d'activation de ce profil admin.",
+        "back": "Retour a la gestion des utilisateurs",
+        "created_by_current_admin": "Administrateur plateforme",
+        "success_message": "Compte administrateur cree avec succes.",
+        "error_message": "Impossible de creer le compte administrateur.",
+        "email_exists_error": "Cet e-mail est deja associe a un compte administrateur.",
+        "form": {
+          "full_name": "Nom complet",
+          "full_name_placeholder": "Ex : John Doe",
+          "email": "E-mail",
+          "email_placeholder": "admin@mrimpot.io",
+          "password": "Mot de passe",
+          "password_placeholder": "Saisir un mot de passe securise",
+          "phone": "Telephone",
+          "phone_placeholder": "+237 600 00 00 00",
+          "country": "Pays",
+          "country_placeholder": "Ex : Cameroun",
+          "role": "Role administrateur",
+          "role_placeholder": "Selectionner un role",
+          "status": "Statut du compte",
+          "status_placeholder": "Selectionner un statut",
+          "managed_sections": "Groupes de permissions",
+          "managed_sections_hint": "Choisissez au moins un groupe de permissions accessible a cet administrateur.",
+          "cancel": "Annuler",
+          "submit": "Creer le compte administrateur"
+        },
+        "validation": {
+          "full_name_required": "Le nom complet est requis",
+          "email_required": "L'e-mail est requis",
+          "invalid_email": "Veuillez saisir un e-mail valide",
+          "email_already_exists": "Cet e-mail est deja utilise par un autre admin",
+          "phone_required": "Le numero de telephone est requis",
+          "country_required": "Le pays est requis",
+          "password_min": "Le mot de passe doit comporter au moins 8 caracteres",
+          "sections_required": "Selectionnez au moins une section"
+        }
+      }
+    },
+    "ReportAnalytics": {
+      "title": "Rapports et analyses",
+      "description": "Suivez la sante de la plateforme avec des metriques actionnables et des exports prets.",
+      "overview_title": "Vue de performance",
+      "kpi_delta_context": "Variation par rapport a la periode precedente equivalente",
+      "refresh_action": "Actualiser les insights",
+      "refresh_loading": "Actualisation des donnees analytiques...",
+      "refresh_success": "Donnees analytiques mises a jour.",
+      "refresh_error": "Echec de l'actualisation des donnees analytiques.",
+      "indicator_info_aria": "Afficher la definition de {indicator}",
+      "kpis": {
+        "active_accounts": "Comptes actifs",
+        "conversion_rate": "Taux de conversion",
+        "subscription_revenue": "Revenu des abonnements",
+        "support_resolution_rate": "Taux de resolution support",
+        "documents_published": "Documents publies",
+        "critical_alerts": "Alertes critiques",
+        "definitions": {
+          "active_accounts": "Nombre de comptes uniques actifs pendant la periode selectionnee.",
+          "conversion_rate": "Pourcentage d'utilisateurs qui passent a une offre payante.",
+          "subscription_revenue": "Montant total genere par les abonnements actifs sur la periode.",
+          "support_resolution_rate": "Part des tickets support resolus pendant la periode selectionnee.",
+          "documents_published": "Nombre de nouveaux documents juridiques ou articles publies.",
+          "critical_alerts": "Nombre d'incidents critiques qui demandent une action immediate."
+        }
+      },
+      "filters": {
+        "title": "Filtres globaux",
+        "description": "Affinez les metriques par periode et segment d'audience.",
+        "period_label": "Periode",
+        "segment_label": "Segment",
+        "compare_label": "Comparaison",
+        "compare_toggle_on": "Comparaison activee",
+        "compare_toggle_off": "Comparaison desactivee",
+        "period_options": {
+          "7d": "7 derniers jours",
+          "30d": "30 derniers jours",
+          "90d": "90 derniers jours"
+        },
+        "segment_options": {
+          "all": "Tous les utilisateurs",
+          "admins": "Admins uniquement",
+          "paid": "Utilisateurs payants",
+          "free": "Utilisateurs gratuits"
+        }
+      },
+      "chart": {
+        "title": "Explorateur de tendances",
+        "description": "Basculez entre les metriques pour detecter opportunites et risques operationnels.",
+        "metrics": {
+          "activeUsers": "Utilisateurs actifs",
+          "newSubscriptions": "Nouveaux abonnements",
+          "supportTickets": "Tickets support",
+          "revenue": "Revenu"
+        },
+        "metric_definitions": {
+          "activeUsers": "Utilisateurs connectes ou ayant realise une action cle sur le segment temporel.",
+          "newSubscriptions": "Nouveaux plans payants actives pendant la periode selectionnee.",
+          "supportTickets": "Demandes support creees par les utilisateurs sur la periode.",
+          "revenue": "Revenu d'abonnement genere pour chaque segment temporel."
+        },
+        "series_current": "Periode courante",
+        "series_previous": "Periode precedente",
+        "comparison_off": "Comparaison desactivee pour cette vue",
+        "labels": {
+          "monday": "Lun",
+          "tuesday": "Mar",
+          "wednesday": "Mer",
+          "thursday": "Jeu",
+          "friday": "Ven",
+          "saturday": "Sam",
+          "sunday": "Dim",
+          "week_1": "Semaine 1",
+          "week_2": "Semaine 2",
+          "week_3": "Semaine 3",
+          "week_4": "Semaine 4",
+          "week_5": "Semaine 5",
+          "month_jan": "Jan",
+          "month_feb": "Fev",
+          "month_mar": "Mar",
+          "month_apr": "Avr"
+        }
+      },
+      "insights": {
+        "title": "Insights prioritaires",
+        "description": "La detection d'anomalies met en avant les actions a prioriser.",
+        "severities": {
+          "high": "Eleve",
+          "medium": "Moyen",
+          "low": "Faible"
+        },
+        "ticket_spike_title": "Hausse de la file support cette semaine",
+        "ticket_spike_description": "Les tickets lies a la facturation et aux acces ont augmente apres la derniere release.",
+        "conversion_dip_title": "Baisse de conversion au checkout",
+        "conversion_dip_description": "L'onboarding payant performe moins bien sur le segment gratuit pour la periode actuelle.",
+        "doc_uptake_title": "Usage de la base documentaire en hausse",
+        "doc_uptake_description": "Les documents juridiques les plus consultes accelerent la resolution des demandes support.",
+        "actions": {
+          "open_support_queue": "Ouvrir la file support",
+          "review_checkout_flow": "Revoir le tunnel de paiement",
+          "promote_best_content": "Promouvoir les meilleurs documents"
+        },
+        "action_success": "Action preparee : {action}."
+      },
+      "modules": {
+        "title": "Sante des modules",
+        "description": "Scorecards operationnelles par domaine produit.",
+        "labels": {
+          "user_management": "Gestion des utilisateurs",
+          "documents": "Documents",
+          "support": "Support",
+          "subscriptions": "Abonnements"
+        },
+        "summaries": {
+          "user_management_summary": "Les flux d'attribution des roles et d'activation restent stables.",
+          "documents_summary": "Le pipeline de publication reste regulier avec une bonne adoption.",
+          "support_summary": "La latence de reponse augmente sur les demandes complexes.",
+          "subscriptions_summary": "Le renouvellement reste stable avec un potentiel d'upsell modere."
+        },
+        "score": "Score de sante",
+        "adoption": "Adoption fonctionnelle",
+        "incidents": "{count} incidents actifs",
+        "incidents_label": "Incidents actifs",
+        "definitions": {
+          "score": "Score global de fiabilite base sur la stabilite, la rapidite et la qualite.",
+          "adoption": "Pourcentage d'utilisateurs actifs qui utilisent regulierement ce module.",
+          "incidents": "Problemes ouverts qui impactent actuellement la qualite ou l'operationnel du module."
+        },
+        "trends": {
+          "up": "En progression",
+          "down": "En baisse",
+          "stable": "Stable"
+        }
+      },
+      "export": {
+        "trigger": "Exporter",
+        "loading": "Preparation de l'export {format}...",
+        "success": "Export {format} pret pour {period} ({segment}).",
+        "error": "L'export a echoue. Veuillez reessayer.",
+        "formats": {
+          "csv": "CSV",
+          "xlsx": "Excel (.xlsx)",
+          "pdf": "PDF"
+        }
+      },
+      "table": {
+        "title": "Mix d'acquisition",
+        "description": "Comparez la performance des canaux et leur impact sur la monetisation.",
+        "source": "Source",
+        "sessions": "Sessions",
+        "conversion": "Conversion",
+        "revenue": "Revenu",
+        "definitions": {
+          "source": "Canal d'acquisition d'ou proviennent les utilisateurs.",
+          "sessions": "Nombre total de visites generees par cette source.",
+          "conversion": "Part des sessions qui aboutissent a une action cible.",
+          "revenue": "Revenu d'abonnement attribue a cette source."
+        },
+        "sources": {
+          "organic_search": "Recherche organique",
+          "newsletter": "Newsletter",
+          "social_media": "Reseaux sociaux",
+          "referrals": "Parrainage"
+        }
+      }
+    },
+    "Articles": {
+      "title": "Articles",
+      "subtitle": "Here is all articles data uploaded on your Platform",
+      "search_placeholder": "search here",
+      "filter": "filter",
+      "pagination": {
+        "showing_entries": "Showing {start} to {end} of {total} entries",
+        "previous": "Previous",
+        "next": "Next"
+      },
+      "table": {
+        "title": "Titre",
+        "category": "Catégorie",
+        "sub_category": "Sous-catégorie",
+        "format": "Format",
+        "views": "Vues",
+        "uploaded_on": "Téléchargé le",
+        "action": "Action"
+      },
+      "Add": {
+        "title": "Ajouter un article",
+        "subtitle": "Remplissez les informations de l'article",
+        "edit_title": "Modifier l'article",
+        "edit_subtitle": "Modifiez les informations de l'article",
+        "view_title": "Détails de l'article",
+        "view_subtitle": "Consultez les informations de l'article",
+        "back": "Retour",
+        "edit_btn": "Modifier",
+        "delete_btn": "Supprimer",
+        "delete_confirm_title": "Êtes-vous sûr ?",
+        "delete_confirm_message": "Cette action est irréversible.",
+        "cancel_btn": "Annuler",
+        "confirm_delete_btn": "Oui, supprimer",
+        "form": {
+          "title_fr": "Titre (FR)",
+          "title_fr_placeholder": "Ex: Nouveau guide fiscal 2024",
+          "title_en": "Titre (EN)",
+          "title_en_placeholder": "Ex: New Tax Guide 2024",
+          "category": "Catégorie",
+          "category_placeholder": "Sélectionner",
+          "category_loading": "Chargement des catégories...",
+          "sub_category": "Sous-catégorie",
+          "sub_category_placeholder": "Sélectionner",
+          "content_fr": "Contenu descriptif (FR)",
+          "content_fr_placeholder": "Entrez le contenu descriptif en français",
+          "content_en": "Contenu descriptif (EN)",
+          "content_en_placeholder": "Entrez le contenu descriptif en anglais",
+          "video": "Vidéo",
+          "choose_file_btn": "Choisir",
+          "no_file_chosen": "Aucun fichier choisi",
+          "video_preview": "Aperçu de la vidéo"
+        },
+        "categories": {
+          "tech": "Technologie",
+          "health": "Santé",
+          "finance": "Finance"
+        },
+        "sub_categories": {
+          "news": "Actualités",
+          "guides": "Guides"
+        },
+        "publish_now": "Publier",
+        "update_now": "Mettre à jour",
+        "loading_button": "Publication en cours...",
+        "success_message": "Article créé avec succès.",
+        "edit_success_message": "Article mis à jour avec succès.",
+        "error_message": "Erreur lors de la création de l'article.",
+        "edit_error_message": "Erreur lors de la mise à jour de l'article.",
+        "delete_success_message": "Article supprimé.",
+        "delete_error_message": "Erreur lors de la suppression.",
+        "categories_load_error": "Échec du chargement des catégories.",
+        "validation": {
+          "title_fr_required": "Le titre en français est requis",
+          "title_en_required": "Le titre en anglais est requis",
+          "content_fr_required": "Le contenu en français est requis",
+          "content_en_required": "Le contenu en anglais est requis",
+          "category_required": "Catégorie requise",
+          "sub_category_required": "Sous-catégorie requise"
+        }
+      }
+    }
+  }
+}

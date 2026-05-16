@@ -1,0 +1,670 @@
+{
+  "Auth": {
+    "Login": {
+      "login_title": "Welcome to Super Admin",
+      "login_subtitle": "Log in to access the Super Admin dashboard",
+      "login_email": "Email Address",
+      "login_password": "Password",
+      "remember_me": "Keep me logged in",
+      "forgot_password": "Forgot password",
+      "login_button": "Login",
+      "loading_msg": "Logging in...",
+      "error_msg": "Invalid email or password. Please try again.",
+      "error_generic": "An error occurred during login. Please try again later.",
+      "success_msg": "Welcome back!",
+      "validation": {
+        "invalid_email": "Please enter a valid email address.",
+        "password_required": "Password is required."
+      }
+    },
+    "ForgotPassword": {
+      "forgot_password_title": "Forgot Password",
+      "forgot_password_subtitle": "Enter your registered email, and we'll send you a link to reset your password",
+      "email_label": "Email Address",
+      "send_button": "Send Reset Link",
+      "back_to_login": "Log in",
+      "success_title": "Email Sent!",
+      "success_message": "If an account with that email exists, you will receive a password reset link shortly.",
+      "error_message": "An error occurred while sending the reset link. Please try again later.",
+      "sending_button": "Sending..."
+    },
+    "ResetPassword": {
+      "title": "Reset Your Password",
+      "subtitle": "Enter your new password below to regain access to your account",
+      "new_password_label": "New Password",
+      "confirm_password_label": "Confirm New Password",
+      "submit_button": "Reset Password",
+      "resetting_button": "Resetting...",
+      "success_title": "Password Reset Successful!",
+      "success_message": "Your password has been reset. You can now log in with your new password.",
+      "errors": {
+        "password_too_short": "Password must be at least 8 characters long.",
+        "password_no_uppercase": "Password must contain at least one uppercase letter.",
+        "password_no_number": "Password must contain at least one number.",
+        "password_no_special_char": "Password must contain at least one special character.",
+        "password_no_lowercase": "Password must contain at least one lowercase letter.",
+        "passwords_mismatch": "Passwords do not match."
+      },
+      "go_to_login": "Log in"
+    },
+    "side_text": "Supervise Users, Monitor Activity, and Keep Data Safe"
+  },
+  "Dashboard": {
+    "ComingSoon": {
+      "title": "Coming Soon",
+      "subtitle": "This feature is not available yet. We are working hard to bring it to you as soon as possible.",
+      "back_to_dashboard": "Back to Dashboard"
+    },
+    "Topbar": {
+      "search_placeholder": "Search...",
+      "profile": "Profile",
+      "settings": "Settings",
+      "logout": "Logout",
+      "logout_success": "Logout successful!",
+      "logout_error": "Unable to log out. Please try again.",
+      "feature_not_implemented": "The feature \"{feature}\" is not available yet."
+    },
+    "Sidebar": {
+      "dashboard": "Dashboard",
+      "user_management": "User Management",
+      "documents": "Documents",
+      "documents_list": "Available Documents",
+      "categories": "Available Categories",
+      "articles": "Available Articles",
+      "report_analytics": "Report & Analytics",
+      "support_management": "Support Management",
+      "subscription_management": "Subscription Management",
+      "cms": "CMS",
+      "system_settings": "System Settings",
+      "version": "version 1.0.0.1"
+    },
+    "Page": {
+      "title": "Welcome to your Dashboard!",
+      "description": "Here is an overview of platform activity",
+      "subtitle": "Hello, Welcome to Admin Panel",
+      "filter_period": "Filter Period",
+      "statistics": "Statistics",
+      "total_users": "Total Users",
+      "documents_uploaded": "Documents Uploaded",
+      "downloads_today": "Downloads Today",
+      "searches_today": "Searches Today",
+      "user_statistics": "User Statistics",
+      "weekly": "Weekly",
+      "monthly": "Monthly",
+      "recent_activity": "Recent Activity",
+      "downloaded": "Downloaded",
+      "searched": "Searched",
+      "mins_ago": "mins ago",
+      "active_users": "Active Users",
+      "new_users": "New Users",
+      "downloads": "Downloads",
+      "searches": "Searches"
+    },
+    "Documents": {
+      "Add": {
+        "choose_file_btn": "Choose File",
+        "no_file_chosen": "No file chosen",
+        "back": "Back",
+        "title": "Document Information",
+        "subtitle": "Provide the details for the new document below.",
+        "edit_title": "Edit Document Information",
+        "edit_subtitle": "Update the details for the document below.",
+        "view_title": "Document Details",
+        "view_subtitle": "Below are the complete details of the document.",
+        "edit_btn": "Edit",
+        "delete_btn": "Delete",
+        "delete_confirm_title": "Delete this document?",
+        "delete_confirm_message": "This action cannot be undone. Are you sure you want to permanently delete this document?",
+        "cancel_btn": "Cancel",
+        "confirm_delete_btn": "Yes, delete",
+        "delete_success_message": "Document successfully deleted",
+        "delete_error_message": "Failed to delete document",
+        "success_message": "Document published successfully",
+        "error_message": "Failed to publish document",
+        "categories_load_error": "Failed to load categories",
+        "load_error_message": "Failed to load document details",
+        "edit_success_message": "Document updated successfully",
+        "edit_error_message": "Failed to update document",
+        "publish_now": "Publish Now",
+        "update_now": "Update Document",
+        "preview": "Preview:",
+        "form": {
+          "title_fr": "Title (FR)",
+          "title_fr_placeholder": "Enter document title (FR)",
+          "title_en": "Title (EN)",
+          "title_en_placeholder": "Enter document title (EN)",
+          "category": "Select Category",
+          "category_placeholder": "Choose a category",
+          "sub_category": "Select Sub Category",
+          "sub_category_placeholder": "Choose a sub category",
+          "description_fr": "Description (FR)",
+          "description_fr_placeholder": "Enter document description (FR)",
+          "description_en": "Description (EN)",
+          "description_en_placeholder": "Enter document description (EN)",
+          "format": "Format",
+          "format_placeholder": "Select a format",
+          "upload": "Upload File",
+          "upload_pdf_fr": "Upload PDF (FR)",
+          "upload_pdf_en": "Upload PDF (EN)",
+          "upload_video": "Upload Video",
+          "category_loading": "Loading categories...",
+          "category_empty": "No categories available",
+          "sub_category_empty": "No sub-categories available"
+        },
+        "categories": {
+          "reports": "Reports",
+          "guides": "Guides",
+          "tutorials": "Tutorials"
+        },
+        "sub_categories": {
+          "annual": "Annual",
+          "monthly": "Monthly",
+          "weekly": "Weekly"
+        },
+        "formats": {
+          "pdf": "PDF",
+          "video": "Video"
+        },
+        "validation": {
+          "title_fr_required": "Title (FR) is required",
+          "title_en_required": "Title (EN) is required",
+          "category_required": "Category is required",
+          "sub_category_required": "Sub category is required",
+          "description_fr_required": "Description (FR) is required",
+          "description_en_required": "Description (EN) is required",
+          "file_required": "File is required",
+          "video_required": "Video file is required"
+        }
+      },
+      "title": "Documents",
+      "description": "Here is all documents data uploaded on your Platform",
+      "add_document": "Add Document",
+      "statistics": "Statistics",
+      "list_of_all_documents": "List Of All Documents",
+      "search_placeholder": "search here",
+      "list_error_message": "Failed to load documents.",
+      "sort": "Sort",
+      "table": {
+        "title": "Title",
+        "category": "Category",
+        "sub_category": "Sub Category",
+        "format": "Format",
+        "uploaded_on": "Uploaded On",
+        "action": "Action"
+      },
+      "pagination": {
+        "showing_entries": "Showing {start} to {end} of {total} entries",
+        "previous": "Previous",
+        "next": "Next"
+      },
+      "stats": {
+        "total_documents": "Total Documents",
+        "uploaded_pdf": "Uploaded in PDF",
+        "uploaded_video": "Uploaded in Video",
+        "recently_added": "Recently Added"
+      },
+      "filter": {
+        "category": "Category",
+        "subcategory": "Subcategory",
+        "date": "Date",
+        "from": "From",
+        "to": "To",
+        "law": "Law",
+        "decree": "Decree",
+        "jurisprudence": "Jurisprudence",
+        "tax_law": "Tax Law",
+        "civil_law": "Civil Law",
+        "criminal_law": "Criminal Law",
+        "international_law": "International Law"
+      },
+      "Categories": {
+        "title": "Categories",
+        "description": "Manage your document categories and their sub-categories from a single place.",
+        "new_category": "New category",
+        "search_placeholder": "Search category or sub-category",
+        "list_title": "Available categories",
+        "list_description": "{count, plural, =0 {No category} one {# category} other {# categories}}",
+        "empty_title": "No category found",
+        "empty_description": "Try another search or create your first category.",
+        "no_subcategories": "No sub-category",
+        "edit": "Edit",
+        "delete": "Delete",
+        "delete_confirm_title": "Delete category?",
+        "delete_confirm_message": "This will permanently delete {name} and its sub-categories.",
+        "delete_cancel": "Cancel",
+        "delete_confirm": "Delete category",
+        "toast": {
+          "creating": "Creating category...",
+          "updating": "Updating category...",
+          "create_success": "Category created successfully",
+          "update_success": "Category updated successfully",
+          "deleting": "Deleting category...",
+          "delete_success": "Category deleted successfully",
+          "error_generic": "Something went wrong. Please try again."
+        },
+        "form": {
+          "create_title": "Create a category",
+          "create_subtitle": "Define a category and add all related sub-categories.",
+          "edit_title": "Edit category",
+          "edit_subtitle": "Update the category name, sub-categories, or add new ones.",
+          "category_name_fr": "Category name (FR)",
+          "category_name_en": "Category name (EN)",
+          "category_name_fr_placeholder": "Ex: Reglementation fiscale",
+          "category_name_en_placeholder": "Ex: Tax regulations",
+          "sub_categories": "Sub-categories",
+          "sub_category_name_fr_placeholder": "Sub-category {index} (FR)",
+          "sub_category_name_en_placeholder": "Sub-category {index} (EN)",
+          "add_sub_category": "Add sub-category",
+          "save": "Save changes",
+          "create": "Create category",
+          "cancel_edit": "Cancel",
+          "updated_at": "Updated on {date}"
+        },
+        "validation": {
+          "category_name_fr_required": "Category name (FR) is required",
+          "category_name_en_required": "Category name (EN) is required",
+          "sub_category_name_fr_required": "Sub-category name (FR) is required",
+          "sub_category_name_en_required": "Sub-category name (EN) is required",
+          "at_least_one_sub_category": "Add at least one sub-category",
+          "duplicate_sub_categories": "Sub-categories must be unique"
+        }
+      }
+    },
+    "UserManagement": {
+      "title": "User Management",
+      "description": "Manage admin and user accounts from one place.",
+      "create_admin_action": "Create admin account",
+      "statistics": "Statistics",
+      "admins_panel_title": "Admin Accounts",
+      "admins_panel_description": "{count, plural, =0 {No admin account} one {# admin account} other {# admin accounts}}",
+      "users_panel_title": "User Accounts",
+      "users_panel_description": "{count, plural, =0 {No user account} one {# user account} other {# user accounts}}",
+      "search_admin_placeholder": "Search admin by name or email",
+      "search_user_placeholder": "Search user by name or email",
+      "empty_admins": "No admin account found.",
+      "load_admins_error": "Failed to load admin accounts.",
+      "load_users_error": "Failed to load user accounts.",
+      "empty_users": "No user account found.",
+      "view_account": "View account",
+      "table": {
+        "avatar": "Avatar",
+        "admin_name": "Admin Name",
+        "user_name": "User Name",
+        "email": "Email",
+        "role": "Role",
+        "last_login": "Last Login",
+        "subscription": "Subscription",
+        "joined_on": "Joined On",
+        "action": "Action",
+        "status": "Status"
+      },
+      "roles": {
+        "admin": "Admin",
+        "super-admin": "Super Admin",
+        "super_admin": "Super Admin",
+        "support_admin": "Support Admin",
+        "content_admin": "Content Admin"
+      },
+      "plans": {
+        "premium": "Premium",
+        "standard": "Standard",
+        "free": "Free"
+      },
+      "status": {
+        "active": "Active",
+        "invited": "Invited",
+        "suspended": "Suspended",
+        "unknown": "Unknown"
+      },
+      "sections": {
+        "users": "Users",
+        "documents": "Documents",
+        "categories": "Categories",
+        "videos": "Videos",
+        "administration": "Administration"
+      },
+      "stats": {
+        "total_accounts": "Total Accounts",
+        "admin_accounts": "Admin Accounts",
+        "active_users": "Active Users",
+        "new_this_month": "New This Month"
+      },
+      "pagination": {
+        "showing_entries": "Showing {start} to {end} of {total} entries",
+        "previous": "Previous",
+        "next": "Next"
+      },
+      "Details": {
+        "back": "Back to user management",
+        "not_found_title": "Account not found",
+        "not_found_description": "This account does not exist or has been removed.",
+        "subtitle_admin": "Admin account information and status controls.",
+        "subtitle_user": "User account information and status controls.",
+        "action_hint": "This action updates account access immediately.",
+        "summary_title": "Quick Summary",
+        "contact_title": "Contact Details",
+        "account_info_title": "Account Information",
+        "admin_scope_title": "Permissions and Scope",
+        "user_usage_title": "Usage Insights",
+        "action_panel_title": "Account Actions",
+        "action_panel_subtitle": "Suspend or reactivate access for this account.",
+        "status_now": "Current status",
+        "activity_history_title": "Recent Activity",
+        "no_history": "No status change recorded yet.",
+        "history_item": "Status changed from {from} to {to}",
+        "field_type": "Account Type",
+        "type_admin": "Administrator",
+        "type_user": "User",
+        "field_id": "Account ID",
+        "field_email": "Email",
+        "field_phone": "Phone",
+        "field_country": "Country",
+        "field_status": "Status",
+        "field_role": "Role",
+        "field_plan": "Subscription",
+        "field_last_login": "Last Login",
+        "field_joined_on": "Joined On",
+        "field_created_by": "Created By",
+        "field_created_on": "Created On",
+        "field_last_activity": "Last Activity",
+        "field_managed_sections": "Permissions",
+        "field_documents_downloaded": "Documents Downloaded",
+        "field_reports_opened": "Reports Opened",
+        "suspend_btn": "Suspend account",
+        "reactivate_btn": "Reactivate account",
+        "confirm_suspend_title": "Suspend this account?",
+        "confirm_suspend_message": "This account will no longer have access until you reactivate it.",
+        "confirm_reactivate_title": "Reactivate this account?",
+        "confirm_reactivate_message": "This account will immediately regain access to the platform.",
+        "confirm_action_btn": "Confirm",
+        "cancel_action_btn": "Cancel",
+        "suspend_success": "Account suspended successfully.",
+        "reactivate_success": "Account reactivated successfully."
+      },
+      "CreateAdmin": {
+        "title": "Create an admin account",
+        "subtitle": "Set role, access scope, and activation mode for this admin profile.",
+        "back": "Back to user management",
+        "created_by_current_admin": "Platform Admin",
+        "success_message": "Admin account created successfully.",
+        "error_message": "Unable to create admin account.",
+        "email_exists_error": "This email is already assigned to an admin account.",
+        "form": {
+          "full_name": "Full name",
+          "full_name_placeholder": "Ex: John Doe",
+          "email": "Email",
+          "email_placeholder": "admin@mrimpot.io",
+          "password": "Password",
+          "password_placeholder": "Enter a secure password",
+          "phone": "Phone",
+          "phone_placeholder": "+237 600 00 00 00",
+          "country": "Country",
+          "country_placeholder": "Ex: Cameroon",
+          "role": "Admin role",
+          "role_placeholder": "Select a role",
+          "status": "Account status",
+          "status_placeholder": "Select a status",
+          "managed_sections": "Permission groups",
+          "managed_sections_hint": "Choose at least one permission group this admin can access.",
+          "cancel": "Cancel",
+          "submit": "Create admin account"
+        },
+        "validation": {
+          "full_name_required": "Full name is required",
+          "email_required": "Email is required",
+          "invalid_email": "Please enter a valid email",
+          "email_already_exists": "This email is already used by another admin",
+          "phone_required": "Phone number is required",
+          "country_required": "Country is required",
+          "password_min": "Password must be at least 8 characters",
+          "sections_required": "Select at least one section"
+        }
+      }
+    },
+    "ReportAnalytics": {
+      "title": "Report & Analytics",
+      "description": "Track platform health with actionable metrics and export-ready insights.",
+      "overview_title": "Performance Overview",
+      "kpi_delta_context": "Change versus previous matching period",
+      "refresh_action": "Refresh insights",
+      "refresh_loading": "Refreshing analytics data...",
+      "refresh_success": "Analytics data updated.",
+      "refresh_error": "Failed to refresh analytics data.",
+      "indicator_info_aria": "Show definition for {indicator}",
+      "kpis": {
+        "active_accounts": "Active Accounts",
+        "conversion_rate": "Conversion Rate",
+        "subscription_revenue": "Subscription Revenue",
+        "support_resolution_rate": "Support Resolution Rate",
+        "documents_published": "Documents Published",
+        "critical_alerts": "Critical Alerts",
+        "definitions": {
+          "active_accounts": "Number of unique accounts that were active during the selected period.",
+          "conversion_rate": "Percentage of users who completed a paid plan conversion.",
+          "subscription_revenue": "Total revenue generated by active subscriptions for this period.",
+          "support_resolution_rate": "Share of support tickets resolved within the selected period.",
+          "documents_published": "Number of new legal documents or articles published.",
+          "critical_alerts": "Count of high-impact incidents requiring immediate follow-up."
+        }
+      },
+      "filters": {
+        "title": "Global Filters",
+        "description": "Refine metrics by period and audience segment.",
+        "period_label": "Period",
+        "segment_label": "Segment",
+        "compare_label": "Comparison",
+        "compare_toggle_on": "Comparison enabled",
+        "compare_toggle_off": "Comparison disabled",
+        "period_options": {
+          "7d": "Last 7 days",
+          "30d": "Last 30 days",
+          "90d": "Last 90 days"
+        },
+        "segment_options": {
+          "all": "All users",
+          "admins": "Admins only",
+          "paid": "Paid users",
+          "free": "Free users"
+        }
+      },
+      "chart": {
+        "title": "Trend Explorer",
+        "description": "Switch metrics to spot growth opportunities and operational risks.",
+        "metrics": {
+          "activeUsers": "Active users",
+          "newSubscriptions": "New subscriptions",
+          "supportTickets": "Support tickets",
+          "revenue": "Revenue"
+        },
+        "metric_definitions": {
+          "activeUsers": "Users who logged in or performed key actions during the time bucket.",
+          "newSubscriptions": "New paid plans started during the selected period.",
+          "supportTickets": "Support requests created by users in the selected period.",
+          "revenue": "Subscription revenue generated during each time bucket."
+        },
+        "series_current": "Current period",
+        "series_previous": "Previous period",
+        "comparison_off": "Comparison disabled for this view",
+        "labels": {
+          "monday": "Mon",
+          "tuesday": "Tue",
+          "wednesday": "Wed",
+          "thursday": "Thu",
+          "friday": "Fri",
+          "saturday": "Sat",
+          "sunday": "Sun",
+          "week_1": "Week 1",
+          "week_2": "Week 2",
+          "week_3": "Week 3",
+          "week_4": "Week 4",
+          "week_5": "Week 5",
+          "month_jan": "Jan",
+          "month_feb": "Feb",
+          "month_mar": "Mar",
+          "month_apr": "Apr"
+        }
+      },
+      "insights": {
+        "title": "Priority Insights",
+        "description": "Anomaly detection highlights where to act first.",
+        "severities": {
+          "high": "High",
+          "medium": "Medium",
+          "low": "Low"
+        },
+        "ticket_spike_title": "Support queue increased this week",
+        "ticket_spike_description": "Tickets linked to billing and account access rose after the latest release.",
+        "conversion_dip_title": "Checkout conversion dropped",
+        "conversion_dip_description": "Paid onboarding underperformed for free users in the current period.",
+        "doc_uptake_title": "Knowledge base usage improving",
+        "doc_uptake_description": "Top legal documents are driving faster resolution in support conversations.",
+        "actions": {
+          "open_support_queue": "Open support queue",
+          "review_checkout_flow": "Review checkout flow",
+          "promote_best_content": "Promote top documents"
+        },
+        "action_success": "Action prepared: {action}."
+      },
+      "modules": {
+        "title": "Module Health",
+        "description": "Operational scorecards by product area.",
+        "labels": {
+          "user_management": "User Management",
+          "documents": "Documents",
+          "support": "Support",
+          "subscriptions": "Subscriptions"
+        },
+        "summaries": {
+          "user_management_summary": "Role assignment and activation flows stay stable.",
+          "documents_summary": "Publication pipeline remains consistent with strong adoption.",
+          "support_summary": "Response latency is trending up on complex requests.",
+          "subscriptions_summary": "Renewal behavior is stable with moderate upsell momentum."
+        },
+        "score": "Health score",
+        "adoption": "Feature adoption",
+        "incidents": "{count} active incidents",
+        "incidents_label": "Active incidents",
+        "definitions": {
+          "score": "Overall reliability score based on stability, speed, and quality signals.",
+          "adoption": "Percentage of active users who regularly use this module.",
+          "incidents": "Open issues that currently impact module quality or operations."
+        },
+        "trends": {
+          "up": "Improving",
+          "down": "Declining",
+          "stable": "Stable"
+        }
+      },
+      "export": {
+        "trigger": "Export",
+        "loading": "Preparing {format} export...",
+        "success": "{format} export ready for {period} ({segment}).",
+        "error": "Export failed. Please retry.",
+        "formats": {
+          "csv": "CSV",
+          "xlsx": "Excel (.xlsx)",
+          "pdf": "PDF"
+        }
+      },
+      "table": {
+        "title": "Acquisition Mix",
+        "description": "Compare channel performance and monetization impact.",
+        "source": "Source",
+        "sessions": "Sessions",
+        "conversion": "Conversion",
+        "revenue": "Revenue",
+        "definitions": {
+          "source": "Traffic channel where users came from.",
+          "sessions": "Total visits generated by that source.",
+          "conversion": "Share of sessions that resulted in a target action.",
+          "revenue": "Subscription revenue attributed to this source."
+        },
+        "sources": {
+          "organic_search": "Organic Search",
+          "newsletter": "Newsletter",
+          "social_media": "Social Media",
+          "referrals": "Referrals"
+        }
+      }
+    },
+    "Articles": {
+      "title": "Articles",
+      "subtitle": "Here is all articles data uploaded on your Platform",
+      "search_placeholder": "search here",
+      "filter": "filter",
+      "pagination": {
+        "showing_entries": "Showing {start} to {end} of {total} entries",
+        "previous": "Previous",
+        "next": "Next"
+      },
+      "table": {
+        "title": "Title",
+        "category": "Category",
+        "views": "Views",
+        "uploaded_on": "Uploaded On",
+        "action": "Action"
+      },
+      "Add": {
+        "title": "Add an article",
+        "subtitle": "Fill in the article information",
+        "edit_title": "Edit article",
+        "edit_subtitle": "Modify article information",
+        "view_title": "Article details",
+        "view_subtitle": "View article information",
+        "back": "Back",
+        "edit_btn": "Edit",
+        "delete_btn": "Delete",
+        "delete_confirm_title": "Are you sure?",
+        "delete_confirm_message": "This action cannot be undone.",
+        "cancel_btn": "Cancel",
+        "confirm_delete_btn": "Yes, delete",
+        "form": {
+          "title_fr": "Title (FR)",
+          "title_fr_placeholder": "Ex: Nouveau guide fiscal 2024",
+          "title_en": "Title (EN)",
+          "title_en_placeholder": "Ex: New Tax Guide 2024",
+          "category": "Category",
+          "category_placeholder": "Select",
+          "category_loading": "Loading categories...",
+          "sub_category": "Sub-category",
+          "sub_category_placeholder": "Select",
+          "content_fr": "Descriptive Content (FR)",
+          "content_fr_placeholder": "Enter descriptive content in French",
+          "content_en": "Descriptive Content (EN)",
+          "content_en_placeholder": "Enter descriptive content in English",
+          "video": "Video",
+          "choose_file_btn": "Choose",
+          "no_file_chosen": "No file chosen",
+          "video_preview": "Video Preview"
+        },
+        "categories": {
+          "tech": "Technology",
+          "health": "Health",
+          "finance": "Finance"
+        },
+        "sub_categories": {
+          "news": "News",
+          "guides": "Guides"
+        },
+        "publish_now": "Publish",
+        "update_now": "Update",
+        "loading_button": "Publishing...",
+        "success_message": "Article successfully created.",
+        "edit_success_message": "Article successfully updated.",
+        "error_message": "Error creating article.",
+        "edit_error_message": "Error updating article.",
+        "delete_success_message": "Article deleted.",
+        "delete_error_message": "Error deleting article.",
+        "categories_load_error": "Failed to load categories.",
+        "validation": {
+          "title_fr_required": "French title is required",
+          "title_en_required": "English title is required",
+          "content_fr_required": "French content is required",
+          "content_en_required": "English content is required",
+          "category_required": "Category is required",
+          "sub_category_required": "Sub-category is required"
+        }
+      }
+    }
+  }
+}
