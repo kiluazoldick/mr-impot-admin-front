@@ -6,6 +6,17 @@ interface RequestOptions {
   isFormData?: boolean;
 }
 
+function getAuthHeaders(): Record<string, string> {
+  const headers: Record<string, string> = {};
+  if (typeof window !== "undefined") {
+    const token = localStorage.getItem("sb-access-token");
+    if (token) {
+      headers["Authorization"] = `Bearer ${token}`;
+    }
+  }
+  return headers;
+}
+
 async function request<T = any>(
   endpoint: string,
   options?: RequestInit & RequestOptions,
@@ -13,6 +24,7 @@ async function request<T = any>(
   const { isFormData, ...fetchOptions } = options || {};
 
   const headers: Record<string, string> = {
+    ...getAuthHeaders(),
     ...(fetchOptions.headers as Record<string, string>),
   };
 
@@ -23,7 +35,6 @@ async function request<T = any>(
   const response = await fetch(`${API_BASE_URL}${endpoint}`, {
     ...fetchOptions,
     headers,
-    credentials: "include",
   });
 
   if (!response.ok) {
