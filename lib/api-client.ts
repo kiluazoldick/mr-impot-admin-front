@@ -1,4 +1,5 @@
-const API_BASE_URL = "http://localhost:3000/api";
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_URL || "https://mr-impot-backend.vercel.app/api";
 
 interface RequestOptions {
   headers?: Record<string, string>;
