@@ -37,6 +37,11 @@ const LoginPage = () => {
     try {
       const response = await authApi.login(data.email, data.password);
 
+      // Stocker le token dans localStorage
+      if (response?.session?.access_token) {
+        localStorage.setItem("sb-access-token", response.session.access_token);
+      }
+
       toast.success(t("Login.success_msg"));
 
       // Rediriger vers le dashboard
