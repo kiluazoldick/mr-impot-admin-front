@@ -152,14 +152,40 @@ export const adminDocumentsApi = {
     });
   },
 
-  update: (id: string, data: Record<string, any>, file?: File) => {
-    const formData = new FormData();
-    formData.append("data", JSON.stringify(data));
-    if (file) formData.append("file", file);
+  update: async (id: string, data: Record<string, any>, file?: File) => {
+    let file_path: string | null = null;
+    let file_size: number | null = null;
+
+    if (file) {
+      const { supabase } = await import("@/lib/supabase");
+      const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+      const fileName = `${Date.now()}-${safeName}`;
+
+      const { data: uploadData, error: uploadError } = await supabase.storage
+        .from("documents")
+        .upload(fileName, file, {
+          contentType: file.type,
+          upsert: false,
+        });
+
+      if (uploadError) {
+        throw new Error(`Erreur d'upload: ${uploadError.message}`);
+      }
+
+      file_path = uploadData?.path || fileName;
+      file_size = file.size;
+    }
+
     return request<any>(`/admin/documents/${id}`, {
       method: "PUT",
-      body: formData,
-      isFormData: true,
+      body: JSON.stringify({
+        ...data,
+        ...(file_path && {
+          file_path,
+          file_size,
+          mime_type: file?.type || "application/pdf",
+        }),
+      }),
     });
   },
 
@@ -181,7 +207,7 @@ export const adminVideosApi = {
 
   getById: (id: string) => request<any>(`/admin/videos/${id}`),
 
-  create: (
+  create: async (
     data: {
       category_id: string;
       title_fr: string;
@@ -192,30 +218,65 @@ export const adminVideosApi = {
     },
     file?: File,
   ) => {
-    const formData = new FormData();
-    formData.append("data", JSON.stringify(data));
-    if (file) formData.append("file", file);
+    let file_path: string | null = null;
+
+    if (file) {
+      const { supabase } = await import("@/lib/supabase");
+      const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+      const fileName = `${Date.now()}-${safeName}`;
+
+      const { data: uploadData, error: uploadError } = await supabase.storage
+        .from("videos")
+        .upload(fileName, file, {
+          contentType: file.type,
+          upsert: false,
+        });
+
+      if (uploadError) {
+        throw new Error(`Erreur d'upload: ${uploadError.message}`);
+      }
+
+      file_path = uploadData?.path || fileName;
+    }
+
     return request<any>("/admin/videos", {
       method: "POST",
-      body: formData,
-      isFormData: true,
+      body: JSON.stringify({
+        ...data,
+        file_path,
+        file_size: file?.size || null,
+      }),
     });
   },
 
-  update: (id: string, data: Record<string, any>, file?: File) => {
-    if (!file) {
-      return request<any>(`/admin/videos/${id}`, {
-        method: "PUT",
-        body: JSON.stringify(data),
-      });
+  update: async (id: string, data: Record<string, any>, file?: File) => {
+    let file_path: string | null = null;
+
+    if (file) {
+      const { supabase } = await import("@/lib/supabase");
+      const safeName = file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+      const fileName = `${Date.now()}-${safeName}`;
+
+      const { data: uploadData, error: uploadError } = await supabase.storage
+        .from("videos")
+        .upload(fileName, file, {
+          contentType: file.type,
+          upsert: false,
+        });
+
+      if (uploadError) {
+        throw new Error(`Erreur d'upload: ${uploadError.message}`);
+      }
+
+      file_path = uploadData?.path || fileName;
     }
-    const formData = new FormData();
-    formData.append("data", JSON.stringify(data));
-    formData.append("file", file);
+
     return request<any>(`/admin/videos/${id}`, {
       method: "PUT",
-      body: formData,
-      isFormData: true,
+      body: JSON.stringify({
+        ...data,
+        ...(file_path && { file_path, file_size: file?.size || null }),
+      }),
     });
   },
 
