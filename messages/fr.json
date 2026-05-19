@@ -50,6 +50,30 @@
     "side_text": "Superviser les utilisateurs, surveiller l’activité et sécuriser les données"
   },
   "Dashboard": {
+    "Profile": {
+      "title": "Mon Profil",
+      "subtitle": "Gérez vos informations personnelles",
+      "first_name": "Prénom",
+      "last_name": "Nom",
+      "email": "Adresse e-mail",
+      "role": "Rôle",
+      "member_since": "Membre depuis",
+      "save": "Enregistrer les modifications"
+    },
+    "Settings": {
+      "title": "Paramètres",
+      "subtitle": "Gérez les paramètres de votre compte",
+      "language": "Langue",
+      "language_desc": "Choisissez la langue de l'interface",
+      "notifications": "Notifications",
+      "notifications_desc": "Gérez vos préférences de notification",
+      "email_notifications": "Notifications par email",
+      "security": "Sécurité",
+      "security_desc": "Gérez la sécurité de votre compte",
+      "change_password": "Changer le mot de passe",
+      "save": "Enregistrer",
+      "save_success": "Paramètres enregistrés"
+    },
     "ComingSoon": {
       "title": "Bientôt disponible",
       "subtitle": "Cette fonctionnalité n'est pas encore disponible. Nous travaillons activement pour vous l'apporter dès que possible.",

@@ -140,11 +140,17 @@ export function Topbar({ profile }: Readonly<TopbarProps>) {
             <DropdownMenuContent align="end" className="w-56">
               <DropdownMenuLabel>{displayName}</DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <DropdownMenuItem className="cursor-pointer">
+              <DropdownMenuItem
+                className="cursor-pointer"
+                onClick={() => router.push("/dashboard/profile")}
+              >
                 <User className="mr-2 h-4 w-4" />
                 <span>{t("profile")}</span>
               </DropdownMenuItem>
-              <DropdownMenuItem className="cursor-pointer">
+              <DropdownMenuItem
+                className="cursor-pointer"
+                onClick={() => router.push("/dashboard/settings")}
+              >
                 <Settings className="mr-2 h-4 w-4" />
                 <span>{t("settings")}</span>
               </DropdownMenuItem>
