@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "@/i18n/navigation";
+import { adminUsersApi } from "@/lib/api-client";
 
 interface UserAccountDetailViewProps {
   accountId: string;
@@ -31,15 +32,10 @@ export function UserAccountDetailView({
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const response = await fetch(`http://localhost:3000/api/admin/users`, {
-          credentials: "include",
-        });
-        if (response.ok) {
-          const data = await response.json();
-          const list = Array.isArray(data) ? data : data?.data || [];
-          const found = list.find((u: any) => u.id === accountId);
-          setProfile(found || null);
-        }
+        const data = await adminUsersApi.getAll();
+        const list = Array.isArray(data) ? data : data?.data || [];
+        const found = list.find((u: any) => u.id === accountId);
+        setProfile(found || null);
       } catch (error) {
         console.error("Erreur chargement profil:", error);
       } finally {

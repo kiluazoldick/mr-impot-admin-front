@@ -18,7 +18,7 @@ import { adminDocumentsApi } from "@/lib/api-client";
 interface ChartDataPoint {
   name: string;
   Documents: number;
-  "Documents Téléchargés": number;
+  Téléchargés: number;
 }
 
 export function UserChart() {
@@ -35,10 +35,10 @@ export function UserChart() {
           page: "1",
           limit: "100",
         });
-        const docs = (result as any)?.data || [];
+        const docs = result?.data || [];
 
-        // Grouper par mois pour le graphique mensuel
-        const grouped: Record<string, { created: number }> = {};
+        const grouped: Record<string, { created: number; downloads: number }> =
+          {};
 
         docs.forEach((doc: any) => {
           if (doc.created_at) {
@@ -48,27 +48,27 @@ export function UserChart() {
                 ? date.toLocaleString("fr", { month: "short", year: "2-digit" })
                 : `${date.getDate()}/${date.getMonth() + 1}`;
 
-            if (!grouped[key]) grouped[key] = { created: 0 };
+            if (!grouped[key]) grouped[key] = { created: 0, downloads: 0 };
             grouped[key].created++;
+            grouped[key].downloads += doc.download_count || 0;
           }
         });
 
-        // Derniers 6 mois/semaines
         const chartData: ChartDataPoint[] = Object.entries(grouped)
           .slice(-6)
           .map(([name, values]) => ({
             name,
             Documents: values.created,
-            "Documents Téléchargés": Math.floor(values.created * 0.7), // simulé
+            Téléchargés: values.downloads,
           }));
 
         setData(
           chartData.length > 0
             ? chartData
             : [
-                { name: "Jan", Documents: 0, "Documents Téléchargés": 0 },
-                { name: "Fév", Documents: 0, "Documents Téléchargés": 0 },
-                { name: "Mar", Documents: 0, "Documents Téléchargés": 0 },
+                { name: "Jan", Documents: 0, Téléchargés: 0 },
+                { name: "Fév", Documents: 0, Téléchargés: 0 },
+                { name: "Mar", Documents: 0, Téléchargés: 0 },
               ],
         );
       } catch (error) {
@@ -135,13 +135,21 @@ export function UserChart() {
                         dataKey="name"
                         axisLine={false}
                         tickLine={false}
-                        tick={{ fill: "#94a3b8", fontSize: 12 }}
+                        tick={{
+                          fill: "#64748b",
+                          fontSize: 12,
+                          fontWeight: 500,
+                        }}
                         dy={10}
                       />
                       <YAxis
                         axisLine={false}
                         tickLine={false}
-                        tick={{ fill: "#94a3b8", fontSize: 12 }}
+                        tick={{
+                          fill: "#64748b",
+                          fontSize: 12,
+                          fontWeight: 500,
+                        }}
                       />
                       <Tooltip
                         cursor={{ fill: "#f8fafc" }}
@@ -149,19 +157,21 @@ export function UserChart() {
                           borderRadius: "8px",
                           border: "none",
                           boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.1)",
+                          fontSize: "13px",
                         }}
                       />
                       <Bar
                         dataKey="Documents"
                         name="Documents"
-                        fill="#e2e8f0"
+                        fill="#F49600"
                         barSize={20}
                         radius={[4, 4, 0, 0]}
                       />
                       <Bar
-                        dataKey="Documents Téléchargés"
+                        dataKey="Téléchargés"
                         name="Téléchargés"
-                        fill="#38bdf8"
+                        fill="#F49600"
+                        fillOpacity={0.4}
                         barSize={20}
                         radius={[4, 4, 0, 0]}
                       />

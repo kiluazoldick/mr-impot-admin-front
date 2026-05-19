@@ -7,7 +7,7 @@ import { UserChart } from "./_components/user-chart";
 import { DateFilter } from "./_components/date-filter";
 import { PageHeader } from "./_components/page-header";
 import { StatCards, StatData } from "./_components/stat-cards";
-import { authApi, adminDocumentsApi } from "@/lib/api-client";
+import { authApi, adminDocumentsApi, adminUsersApi } from "@/lib/api-client";
 import { Users, FileText, Download, Search } from "lucide-react";
 
 export default function DashboardPage() {
@@ -21,8 +21,9 @@ export default function DashboardPage() {
       setIsLoading(true);
       try {
         // Récupérer les stats réelles
-        const [documentsResult] = await Promise.allSettled([
+        const [documentsResult, usersResult] = await Promise.allSettled([
           adminDocumentsApi.getAll({ page: "1", limit: "1" }),
+          adminUsersApi.getAll(),
         ]);
 
         const totalDocs =
@@ -30,30 +31,53 @@ export default function DashboardPage() {
             ? documentsResult.value?.total || 0
             : 0;
 
+        // Compter les utilisateurs (non-admin)
+        let totalUsers = 0;
+        let activeUsers = 0;
+        if (usersResult.status === "fulfilled") {
+          const users = Array.isArray(usersResult.value)
+            ? usersResult.value
+            : usersResult.value?.data || [];
+          const regularUsers = users.filter((u: any) => u.role !== "admin");
+          totalUsers = regularUsers.length;
+          activeUsers = regularUsers.filter((u: any) => u.is_active).length;
+        }
+
+        // Calculer les téléchargements totaux
+        const allDocsResult = await adminDocumentsApi.getAll({
+          page: "1",
+          limit: "100",
+        });
+        const allDocs = allDocsResult?.data || [];
+        const totalDownloads = allDocs.reduce(
+          (sum: number, doc: any) => sum + (doc.download_count || 0),
+          0,
+        );
+
         setStats([
           {
             title: t("total_documents"),
             value: totalDocs,
             icon: FileText,
-            bgColor: "bg-blue-500",
+            bgColor: "bg-[#F49600]",
           },
           {
             title: t("downloads_today"),
-            value: "-",
+            value: totalDownloads,
             icon: Download,
-            bgColor: "bg-emerald-500",
+            bgColor: "bg-[#F49600]",
           },
           {
             title: t("searches_today"),
             value: "-",
             icon: Search,
-            bgColor: "bg-violet-500",
+            bgColor: "bg-[#F49600]",
           },
           {
             title: t("active_users"),
-            value: "-",
+            value: activeUsers,
             icon: Users,
-            bgColor: "bg-amber-500",
+            bgColor: "bg-[#F49600]",
           },
         ]);
 
