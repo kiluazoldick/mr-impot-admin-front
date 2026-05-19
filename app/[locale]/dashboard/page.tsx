@@ -59,25 +59,25 @@ export default function DashboardPage() {
             title: t("total_documents"),
             value: totalDocs,
             icon: FileText,
-            bgColor: "bg-[#F49600]",
+            bgColor: "bg-[#38bdf8]",
           },
           {
             title: t("downloads_today"),
             value: totalDownloads,
             icon: Download,
-            bgColor: "bg-[#F49600]",
+            bgColor: "bg-[#38bdf8]",
           },
           {
             title: t("searches_today"),
             value: "-",
             icon: Search,
-            bgColor: "bg-[#F49600]",
+            bgColor: "bg-[#38bdf8]",
           },
           {
             title: t("active_users"),
             value: activeUsers,
             icon: Users,
-            bgColor: "bg-[#F49600]",
+            bgColor: "bg-[#38bdf8]",
           },
         ]);
 
