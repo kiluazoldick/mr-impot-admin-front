@@ -7,6 +7,7 @@ export interface BackendServerEnv {
   BACKEND_ACCESS_TOKEN_COOKIE_MAX_AGE_SECONDS: number;
   BACKEND_REFRESH_TOKEN_COOKIE_MAX_AGE_SECONDS: number;
   BACKEND_COOKIE_SECURE: boolean;
+  BACKEND_COOKIE_DOMAIN: string | undefined; // 👈 AJOUT
 }
 
 export type BackendPublicEnv = {
@@ -14,6 +15,8 @@ export type BackendPublicEnv = {
 };
 
 export function getBackendServerEnv(): BackendServerEnv {
+  const isProduction = process.env.NODE_ENV === "production";
+
   return {
     BACKEND_API_BASE_URL:
       process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000/api",
@@ -22,7 +25,9 @@ export function getBackendServerEnv(): BackendServerEnv {
     BACKEND_REFRESH_TOKEN_COOKIE_NAME: "sb-refresh-token",
     BACKEND_ACCESS_TOKEN_COOKIE_MAX_AGE_SECONDS: 3600,
     BACKEND_REFRESH_TOKEN_COOKIE_MAX_AGE_SECONDS: 2592000,
-    BACKEND_COOKIE_SECURE: process.env.NODE_ENV === "production",
+    BACKEND_COOKIE_SECURE: isProduction,
+    // 👇 AJOUT : domaine pour les cookies en production
+    BACKEND_COOKIE_DOMAIN: isProduction ? ".pcakoa.com" : undefined,
   };
 }
 
