@@ -76,11 +76,11 @@ export async function POST(request: NextRequest) {
       },
     });
 
+    // ✅ CORRECTION : sameSite typé correctement
     response.cookies.set(NEXT_INTL_LOCALE_COOKIE_NAME, locale, {
       path: "/",
-      sameSite: "lax",
+      sameSite: "lax" as const,
       maxAge: 60 * 60 * 24 * 365,
-      // 👇 AJOUT : domaine pour partager le cookie
       domain: isProduction ? ".pcakoa.com" : undefined,
     });
 
@@ -90,10 +90,9 @@ export async function POST(request: NextRequest) {
       {
         httpOnly: true,
         path: "/",
-        sameSite: "lax",
+        sameSite: "lax" as const,
         secure: env.BACKEND_COOKIE_SECURE,
         maxAge: loginResponse.tokens.expiresIn,
-        // 👇 AJOUT : domaine pour partager le cookie
         domain: isProduction ? ".pcakoa.com" : undefined,
       },
     );

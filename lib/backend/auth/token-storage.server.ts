@@ -21,7 +21,6 @@ function createBaseCookieOptions() {
     sameSite: "lax" as const,
     secure: env.BACKEND_COOKIE_SECURE,
     path: "/",
-    // 👇 AJOUT : domaine pour partager les cookies entre sous-domaines
     domain: isProduction ? ".pcakoa.com" : undefined,
   };
 }
@@ -69,12 +68,7 @@ export async function clearServerAuthTokens() {
   const cookieStore = await cookies();
   const baseCookieOptions = createBaseCookieOptions();
 
-  cookieStore.delete(env.BACKEND_ACCESS_TOKEN_COOKIE_NAME, {
-    path: baseCookieOptions.path,
-    domain: baseCookieOptions.domain,
-  });
-  cookieStore.delete(env.BACKEND_REFRESH_TOKEN_COOKIE_NAME, {
-    path: baseCookieOptions.path,
-    domain: baseCookieOptions.domain,
-  });
+  // ✅ CORRECTION : cookieStore.delete() prend seulement le nom du cookie
+  cookieStore.delete(env.BACKEND_ACCESS_TOKEN_COOKIE_NAME);
+  cookieStore.delete(env.BACKEND_REFRESH_TOKEN_COOKIE_NAME);
 }
