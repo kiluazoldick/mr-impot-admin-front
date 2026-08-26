@@ -19,22 +19,23 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Mr Impôt - Dashboard Super Admin",
-  description: "Gestion et supervision de l'application Mr Impôt pour les administrateurs",
+  description:
+    "Gestion et supervision de l'application Mr Impôt pour les administrateurs",
 };
 
 type Props = {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
-}
+};
 
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
 
   if (!hasLocale(routing.locales, locale)) {
-    notFound()
+    notFound();
   }
 
-  const messages = await getMessages()
+  const messages = await getMessages();
 
   return (
     <html
